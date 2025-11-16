@@ -1,0 +1,16 @@
+# Colcon build files
+build/
+install/
+log/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VSCode / editor stuff
+.vscode/
+.idea/
+
+# Other common clutter
+*.swp
+.DS_Store
