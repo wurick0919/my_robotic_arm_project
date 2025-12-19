@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'my_robotic_arm_describtion'
+package_name = 'my_robotic_arm_description'
 
 setup(
     name=package_name,
