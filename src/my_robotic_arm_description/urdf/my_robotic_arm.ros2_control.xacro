@@ -1,3 +1,26 @@
 <?xml version="1.0"?>
 <robot name="my_robot" xmlns:xacro= "http://www.ros.org/wiki/xacro">
+
+    <ros2_control name="MyRoboticArmHardwareInterface" type="system">
+        <hardware>
+            <plugin>mock_components/GenericSystem</plugin>
+            <param name="calculate_dynamics">true</param>
+        </hardware>
+        <joint name="base_first_joint">
+            <command_interface name="position" />
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="first_second_joint">
+            <command_interface name="position" />
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="second_third_joint">
+            <command_interface name="position" />
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+        </joint>
+    </ros2_control>
+
 </robot>
