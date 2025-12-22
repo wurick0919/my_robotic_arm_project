@@ -1,4 +1,3 @@
-# this code is imported from my_robot_description_exmple in ros2_ws, and still need modification
 from launch import LaunchDescription
 from launch_ros.parameter_descriptions import ParameterValue
 from launch_ros.actions import Node
@@ -8,9 +7,9 @@ from ament_index_python.packages import get_package_share_path
 
 def generate_launch_description():
 
-    urdf_path = os.path.join(get_package_share_path('my_robot_description_example'),
-                             'urdf', 'my_robot.urdf.xacro')
-    rviz_config_path = os.path.join(get_package_share_path('my_robot_description_example'),
+    urdf_path = os.path.join(get_package_share_path('my_robotic_arm_description'),
+                             'urdf', 'my_robotic_arm.urdf.xacro')
+    rviz_config_path = os.path.join(get_package_share_path('my_robotic_arm_description'),
                                     'rviz', 'urdf_config.rviz')
     
     robot_description = ParameterValue(Command(['xacro ', urdf_path]), value_type=str)
