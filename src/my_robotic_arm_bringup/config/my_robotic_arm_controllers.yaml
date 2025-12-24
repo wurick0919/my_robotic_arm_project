@@ -1,0 +1,31 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 50
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    joint_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+joint_trajectory_controller:
+  ros__parameters:
+    joints: ["base_first_joint", "first_second_joint", "second_third_joint"]
+
+    command_interfaces: ["position"]
+    state_interfaces: ["position", "velocity"]
+
+    constraints:
+      goal_time: 0.5
+
+      base_first_joint:
+        trajectory: 0.1
+        goal: 0.05
+
+      first_second_joint:
+        trajectory: 0.1
+        goal: 0.05
+
+      second_third_joint:
+        trajectory: 0.1
+        goal: 0.05
