@@ -57,6 +57,8 @@
     <xacro:arm_link prefix="second" length="0.2" radius="0.03" mass="0.8" />
     <xacro:arm_link prefix="third" length="0.2" radius="0.03" mass="0.8" />
 
+    <link name="tcp_link" />
+
     <joint name="base_first_joint" type="revolute">
         <parent link="base_link" />
         <child link="first_link" />
@@ -77,6 +79,11 @@
         <origin xyz="0 0 0.2" rpy="0 0 0" />
         <axis xyz="1 0 0" />
         <limit lower="-3.14" upper="3.14" effort="20" velocity="3.14"/>
+    </joint>
+    <joint name="tcp" type="fixed">
+        <parent link="third_link" />
+        <child link="tcp_link" />
+        <origin xyz="0 0 0.2" rpy="0 0 0" />
     </joint>
 
 </robot>
