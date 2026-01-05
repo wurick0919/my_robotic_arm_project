@@ -23,14 +23,14 @@
         <joint name="second_third_joint" value="0"/>
     </group_state>
     <group_state name="pose_1" group="arm">
-        <joint name="base_first_joint" value="-0.2602"/>
-        <joint name="first_second_joint" value="-0.6072"/>
-        <joint name="second_third_joint" value="-0.8848"/>
+        <joint name="base_first_joint" value="1.0582"/>
+        <joint name="first_second_joint" value="-0.746"/>
+        <joint name="second_third_joint" value="-0.5725"/>
     </group_state>
     <group_state name="pose_2" group="arm">
-        <joint name="base_first_joint" value="2.2379"/>
-        <joint name="first_second_joint" value="-1.4052"/>
-        <joint name="second_third_joint" value="-1.2317"/>
+        <joint name="base_first_joint" value="-1.6134"/>
+        <joint name="first_second_joint" value="-0.746"/>
+        <joint name="second_third_joint" value="-1.995"/>
     </group_state>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="base_link"/>
