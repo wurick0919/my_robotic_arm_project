@@ -1,0 +1,171 @@
+<?xml version="1.0" ?>
+<robot name="my_robotic_arm">
+    <material name="white">
+        <color rgba="1 1 1 1"/>
+    </material>
+
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.05" radius="0.05" />
+            </geometry>
+            <origin xyz="0 0 0.025" rpy="0 0 0" />
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length="0.05" radius="0.05"/>
+            </geometry>
+            <origin xyz="0 0 0.025" rpy="0 0 0" />
+        </collision>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="3.0"/>
+            <inertia
+                ixx="0.05"
+                iyy="0.05"
+                izz="0.004"
+                ixy="0"
+                ixz="0"
+                iyz="0"/>
+        </inertial>
+    </link>
+
+    <link name="first_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.2" radius="0.02" />
+            </geometry>
+            <origin xyz="0 0 0.1" rpy="0 0 0" />
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length="0.15" radius="0.015"/>
+            </geometry>
+            <origin xyz="0 0 0.1" rpy="0 0 0" />
+        </collision>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.8"/>
+            <inertia
+                ixx="0.003"
+                iyy="0.003"
+                izz="0.0004"
+                ixy="0"
+                ixz="0"
+                iyz="0"/>
+        </inertial>
+    </link>
+
+    <link name="second_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.2" radius="0.02" />
+            </geometry>
+            <origin xyz="0 0 0.1" rpy="0 0 0" />
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length="0.15" radius="0.015"/>
+            </geometry>
+            <origin xyz="0 0 0.1" rpy="0 0 0" />
+        </collision>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.8"/>
+            <inertia
+                ixx="0.003"
+                iyy="0.003"
+                izz="0.0004"
+                ixy="0"
+                ixz="0"
+                iyz="0"/>
+        </inertial>
+    </link>
+
+    <link name="third_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.2" radius="0.02" />
+            </geometry>
+            <origin xyz="0 0 0.1" rpy="0 0 0" />
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length="0.15" radius="0.015"/>
+            </geometry>
+            <origin xyz="0 0 0.1" rpy="0 0 0" />
+        </collision>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.8"/>
+            <inertia
+                ixx="0.003"
+                iyy="0.003"
+                izz="0.0004"
+                ixy="0"
+                ixz="0"
+                iyz="0"/>
+        </inertial>
+    </link>
+
+    <link name="tcp_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.01" radius="0.005" />
+            </geometry>
+            <origin xyz="0 0 0.005" rpy="0 0 0" />
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length="0.01" radius="0.005"/>
+            </geometry>
+            <origin xyz="0 0 0.005" rpy="0 0 0" />
+        </collision>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.01"/>
+            <inertia
+                ixx="0.00003"
+                iyy="0.00003"
+                izz="0.000004"
+                ixy="0"
+                ixz="0"
+                iyz="0"/>
+        </inertial>
+    </link>
+
+    <joint name="base_first_joint" type="revolute">
+        <parent link="base_link" />
+        <child link="first_link" />
+        <origin xyz="0 0 0.05" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.14" upper="3.14" effort="20" velocity="3.14"/>
+    </joint>
+    <joint name="first_second_joint" type="revolute">
+        <parent link="first_link" />
+        <child link="second_link" />
+        <origin xyz="0 0 0.2" rpy="0 0 0" />
+        <axis xyz="1 0 0" />
+        <limit lower="-3.14" upper="3.14" effort="20" velocity="3.14"/>
+    </joint>
+    <joint name="second_third_joint" type="revolute">
+        <parent link="second_link" />
+        <child link="third_link" />
+        <origin xyz="0 0 0.2" rpy="0 0 0" />
+        <axis xyz="1 0 0" />
+        <limit lower="-3.14" upper="3.14" effort="20" velocity="3.14"/>
+    </joint>
+    <joint name="tcp" type="fixed">
+        <parent link="third_link" />
+        <child link="tcp_link" />
+        <origin xyz="0 0 0.2" rpy="0 0 0" />
+    </joint>
+
+    
+
+</robot>
