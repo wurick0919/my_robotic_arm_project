@@ -8,7 +8,7 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 
-isntall(
+install(
   DIRECTORY config
   DESTINATION share/${PROJECT_NAME}/
 )
